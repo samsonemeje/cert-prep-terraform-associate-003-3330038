@@ -24,16 +24,16 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "subnet1" {
-  vpc_id            = aws_vpc.main.id
+  vpc_id            = "vpc-02fd83bf2e6978122"
   cidr_block        = "172.31.0.0/17"
   availability_zone = "us-east-1a"
 }
 
 resource "aws_subnet" "subnet2" {
-  provider          = aws.west
-  vpc_id            = aws_vpc.main.id
+  provider          = aws.duplicate
+  vpc_id            = "vpc-02fd83bf2e6978122"
   cidr_block        = "172.31.128.0/17"
-  availability_zone = "us-west-1a"
+  availability_zone = "us-east-1b"
 }
 
 resource "aws_instance" "ec2-instance1" {

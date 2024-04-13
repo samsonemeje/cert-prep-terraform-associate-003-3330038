@@ -14,8 +14,8 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias   = "duplicate"
-  region  = "us-east-1"
+  alias   = "west"
+  region  = "us-west-1"
   profile = "default"
 }
 
